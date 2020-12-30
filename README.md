@@ -8,7 +8,7 @@ This repository contains the Uwuifier Deno package! It's made for Deno which mea
 
 ```typescript
 // Import the Uwuifier package
-import { Uwuifier } from 'https://deno.land/x/uwuifier/src/index.ts';
+import { Uwuifier } from 'https://deno.land/x/uwuifier/index.ts';
 
 // Create a "Uwuifier" instance
 const uwuifier = new Uwuifier();
