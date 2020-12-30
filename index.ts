@@ -1,9 +1,7 @@
 'use strict';
 
-// @ts-ignore
 import { getCapitalPercentage, InitModifierParam, isUri } from './utils.ts';
-// @ts-ignore
-import { Seed } from './seed.ts';
+import { Seed } from 'https://deno.land/x/seed@1.0.0/index.ts';
 
 interface SpacesModifier {
   faces: number;
@@ -74,7 +72,7 @@ export class Uwuifier {
 
         for (const [oldWord, newWord] of this.uwuMap) {
           // Generate a random value for every map so words will be partly uwuified instead of not at all
-          if (seed.random() > this._wordsModifier) continue;
+          if (seed.randomFloat() > this._wordsModifier) continue;
 
           word = word.replace(oldWord, newWord as string);
         }
@@ -96,7 +94,7 @@ export class Uwuifier {
     const uwuifiedSentence = words
       .map((word, index) => {
         const seed = new Seed(word);
-        const random = seed.random();
+        const random = seed.randomFloat();
 
         const firstCharacter = word[0];
 
@@ -151,7 +149,7 @@ export class Uwuifier {
         const seed = new Seed(word);
 
         // If there are no exclamations return
-        if (!pattern.test(word) || seed.random() > this._exclamationsModifier) return word;
+        if (!pattern.test(word) || seed.randomFloat() > this._exclamationsModifier) return word;
 
         word = word.replace(pattern, ``);
         word += this.exclamations[seed.randomInt(0, this.exclamations.length - 1)];
