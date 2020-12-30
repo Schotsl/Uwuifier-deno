@@ -2,13 +2,13 @@
 
 Uwuifier is a lightweight package that allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving you access to many vewy kawaii sentences, stuttering and faces!
 
-This repository contains the Uwuifier Deno package!  It's a Deno package which means it's written in TypeScript, and makes use of the build-in Deno testing.
+This repository contains the Uwuifier Deno package! It's made for Deno which means it's written in TypeScript, the package also makes use of the build-in Deno testing.
 
 ## Quickstart
 
-```
+```typescript
 // Import the Uwuifier package
-import { Uwuifier } from 'https://deno.land/x/uwuifier/src/index.ts';
+import { Uwuifier } from 'https://deno.land/x/uwuifier/index.ts';
 
 // Create a "Uwuifier" instance
 const uwuifier = new Uwuifier();
@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Deno automaticly downloads the dependencies, so the only thing you need to get started is [install Deno](https://deno.land/manual/getting_started/installation) and install [Denon](https://deno.land/x/denon@2.4.5) if you wanna make use of hot reloading:
 
-```
+```bash
 deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
 ```
 
@@ -33,27 +33,27 @@ Then you can finish the Denon install by following the instructions from the ter
 
 ### Compiling
 
-#### Compile and execute
+#### Execute
 
-```
+```bash
 deno run index.ts
 ```
 
-#### Compile and hot-reload
+#### Hot-reload
 
-```
+```bash
 denon run index.ts
 ```
 
 #### Lint files
 
-```
+```bash
 deno lint --unstable
 ```
 
 #### Testing
 
-```
+```bash
 deno test
 ```
 
@@ -67,7 +67,7 @@ The code will be deployed every at every version release, every commit will be l
 
 ## Acknowledgement
 
-I was inspired to write this god awful package by this site, I would've given full credit but it appears he got most of the Regex from the OwO Google Chrome extension made by leafysweetsgarden, I would include a link but the page is offline. So short story short: I'd like to give a big thanks to leafysweetsgarden for the Regex and the inspiration!
+I was inspired to write this god awful package by [this](https://honk.moe/tools/owo.html) site, I would've given full credit but it appears he got most of the Regex from the OwO Google Chrome extension made by leafysweetsgarden, I would include a link but the page is offline. So short story short: I'd like to give a big thanks to leafysweetsgarden for the Regex and the inspiration! 
 
 
 ## License
