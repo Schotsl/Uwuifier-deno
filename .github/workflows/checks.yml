@@ -3,7 +3,7 @@ name: Checks
 on: [push, pull_request]
 
 jobs:
-  lint:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -20,7 +20,7 @@ jobs:
       - name: Run deno lint
         run: deno lint --unstable
 
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources

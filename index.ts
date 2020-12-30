@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-import { getCapitalPercentage, InitModifierParam, isUri } from './utils.ts';
-import { Seed } from 'https://deno.land/x/seed@1.0.0/index.ts';
+import { getCapitalPercentage, InitModifierParam, isUri } from "./utils.ts";
+import { Seed } from "https://deno.land/x/seed@1.0.0/index.ts";
 
 interface SpacesModifier {
   faces: number;
@@ -10,24 +10,35 @@ interface SpacesModifier {
 }
 
 export class Uwuifier {
-  public faces: string[] = [`(・\`ω´・)`, `;;w;;`, 'OwO', `UwU`, `>w<`, `^w^`, `ÚwÚ`, '^-^', `:3`, `x3`];
+  public faces: string[] = [
+    `(・\`ω´・)`,
+    `;;w;;`,
+    "OwO",
+    `UwU`,
+    `>w<`,
+    `^w^`,
+    `ÚwÚ`,
+    "^-^",
+    `:3`,
+    `x3`,
+  ];
   public exclamations: string[] = [`!?`, `?!!`, `?!?1`, `!!11`, `?!?!`];
   public actions: string[] = [
     `*blushes*`,
     `*whispers to self*`,
-    '*cries*',
-    '*screams*',
-    '*sweats*',
-    '*twerks*',
+    "*cries*",
+    "*screams*",
+    "*sweats*",
+    "*twerks*",
     `*runs away*`,
-    '*screeches*',
-    '*walks away*',
+    "*screeches*",
+    "*walks away*",
     `*sees bulge*`,
-    '*looks at you*',
+    "*looks at you*",
     `*notices buldge*`,
     `*starts twerking*`,
     `*huggles tightly*`,
-    `*boops your nose*`
+    `*boops your nose*`,
   ];
   public uwuMap = [
     [/(?:r|l)/g, `w`],
@@ -35,7 +46,7 @@ export class Uwuifier {
     [/n([aeiou])/g, `ny$1`],
     [/N([aeiou])/g, `Ny$1`],
     [/N([AEIOU])/g, `Ny$1`],
-    [/ove/g, `uv`]
+    [/ove/g, `uv`],
   ];
 
   @InitModifierParam()
@@ -46,16 +57,20 @@ export class Uwuifier {
   private _exclamationsModifier: number;
 
   constructor(
-    { spaces = { faces: 0.05, actions: 0.075, stutters: 0.1 }, words = 1, exclamations = 1 } = {
+    {
+      spaces = { faces: 0.05, actions: 0.075, stutters: 0.1 },
+      words = 1,
+      exclamations = 1,
+    } = {
       spaces: { faces: 0.05, actions: 0.075, stutters: 0.1 },
       words: 0.7,
-      exclamations: 1
-    }
+      exclamations: 1,
+    },
   ) {
     this._spacesModifier = spaces ?? {
       faces: 0.05,
       actions: 0.075,
-      stutters: 0.1
+      stutters: 0.1,
     };
     this._wordsModifier = words ?? 0.7;
     this._exclamationsModifier = exclamations ?? 1;
@@ -79,7 +94,7 @@ export class Uwuifier {
 
         return word;
       })
-      .join(' ');
+      .join(" ");
 
     return uwuifiedSentence;
   }
@@ -100,17 +115,18 @@ export class Uwuifier {
 
         if (random <= faceThreshold && this.faces) {
           // Add random face before the word
-          word += ' ' + this.faces[seed.randomInt(0, this.faces.length - 1)];
+          word += " " + this.faces[seed.randomInt(0, this.faces.length - 1)];
           checkCapital();
         } else if (random <= actionThreshold && this.actions) {
           // Add random action before the word
-          word += ' ' + this.actions[seed.randomInt(0, this.actions.length - 1)];
+          word += " " +
+            this.actions[seed.randomInt(0, this.actions.length - 1)];
           checkCapital();
         } else if (random <= stutterThreshold && !isUri(word)) {
           // Add stutter with a length between 0 and 2
           const stutter = seed.randomInt(0, 2);
 
-          return (firstCharacter + '-').repeat(stutter) + word;
+          return (firstCharacter + "-").repeat(stutter) + word;
         }
 
         function checkCapital() {
@@ -126,7 +142,9 @@ export class Uwuifier {
           } else {
             const previousWord = words[index - 1];
             const previousWordLastChar = previousWord[previousWord.length - 1];
-            const prevWordEndsWithPunctuation = new RegExp('[.!?\\-]').test(previousWordLastChar);
+            const prevWordEndsWithPunctuation = new RegExp("[.!?\\-]").test(
+              previousWordLastChar,
+            );
 
             if (!prevWordEndsWithPunctuation) return;
             word = firstCharacter.toLowerCase() + word.slice(1);
@@ -135,28 +153,33 @@ export class Uwuifier {
 
         return word;
       })
-      .join(' ');
+      .join(" ");
 
     return uwuifiedSentence;
   }
 
   public uwuifyExclamations(sentence: string): string {
     const words = sentence.split(` `);
-    const pattern = new RegExp('[?!]+$');
+    const pattern = new RegExp("[?!]+$");
 
     const uwuifiedSentence = words
       .map((word) => {
         const seed = new Seed(word);
 
         // If there are no exclamations return
-        if (!pattern.test(word) || seed.randomFloat() > this._exclamationsModifier) return word;
+        if (
+          !pattern.test(word) || seed.randomFloat() > this._exclamationsModifier
+        ) {
+          return word;
+        }
 
         word = word.replace(pattern, ``);
-        word += this.exclamations[seed.randomInt(0, this.exclamations.length - 1)];
+        word +=
+          this.exclamations[seed.randomInt(0, this.exclamations.length - 1)];
 
         return word;
       })
-      .join(' ');
+      .join(" ");
 
     return uwuifiedSentence;
   }
