@@ -67,7 +67,7 @@ The code will be deployed every at every version release, every commit will be l
 
 ## Acknowledgement
 
-I was inspired to write this god awful package by this site, I would've given full credit but it appears he got most of the Regex from the OwO Google Chrome extension made by leafysweetsgarden, I would include a link but the page is offline. So short story short: I'd like to give a big thanks to leafysweetsgarden for the Regex and the inspiration!
+I was inspired to write this god awful package by [this](https://honk.moe/tools/owo.html) site, I would've given full credit but it appears he got most of the Regex from the OwO Google Chrome extension made by leafysweetsgarden, I would include a link but the page is offline. So short story short: I'd like to give a big thanks to leafysweetsgarden for the Regex and the inspiration! 
 
 
 ## License
