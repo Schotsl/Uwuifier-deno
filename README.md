@@ -6,7 +6,7 @@ This repository contains the Uwuifier Deno package!  It's a Deno package which m
 
 ## Quickstart
 
-```
+```typescript
 // Import the Uwuifier package
 import { Uwuifier } from 'https://deno.land/x/uwuifier/src/index.ts';
 
@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Deno automaticly downloads the dependencies, so the only thing you need to get started is [install Deno](https://deno.land/manual/getting_started/installation) and install [Denon](https://deno.land/x/denon@2.4.5) if you wanna make use of hot reloading:
 
-```
+```bash
 deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
 ```
 
@@ -33,27 +33,27 @@ Then you can finish the Denon install by following the instructions from the ter
 
 ### Compiling
 
-#### Compile and execute
+#### Execute
 
-```
+```bash
 deno run index.ts
 ```
 
-#### Compile and hot-reload
+#### Hot-reload
 
-```
+```bash
 denon run index.ts
 ```
 
 #### Lint files
 
-```
+```bash
 deno lint --unstable
 ```
 
 #### Testing
 
-```
+```bash
 deno test
 ```
 
