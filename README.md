@@ -2,7 +2,7 @@
 
 Uwuifier is a lightweight package that allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving you access to many vewy kawaii sentences, stuttering and faces!
 
-This repository contains the Uwuifier Deno package!  It's a Deno package which means it's written in TypeScript, and makes use of the build-in Deno testing.
+This repository contains the Uwuifier Deno package! It's made for Deno which means it's written in TypeScript, the package also makes use of the build-in Deno testing.
 
 ## Quickstart
 
