@@ -1,4 +1,4 @@
-# Project Title
+# Uwuifier
 
 Uwuifier is a lightweight package that allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving you access to many vewy kawaii sentences, stuttering and faces!
 
